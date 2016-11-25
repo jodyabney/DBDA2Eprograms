@@ -1,0 +1,45 @@
+---
+title: "Chapter 4 Exercises"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+
+##Exercise 4.1
+
+```{r}
+show(HairEyeColor) # show data
+```
+```{r}
+EyeHairFreq <- apply(HairEyeColor, c("Eye", "Hair"), sum) # sum across sex
+EyeHairProp <- EyeHairFreq / sum(EyeHairFreq) # joint proportions. Table 4.1
+show(round(EyeHairProp, 2))
+```
+
+```{r}
+HairFreq <- apply(HairEyeColor, c("Hair"), sum) # sum across sex and eye
+HairProp <- HairFreq /  sum(HairFreq) # marginal proportions. Table 4.1
+show(round(HairProp, 2))
+```
+
+```{r}
+EyeFreq <- apply(HairEyeColor, c("Eye"), sum) # sum across sex and eye
+EyeProp <- EyeFreq / sum(EyeFreq) # marginal proportions. Table 4.1
+show(round(EyeProp, 2))
+```
+
+```{r}
+EyeHairProp["Blue",] / EyeProp["Blue"] # conditional prob. Table 4.2
+```
+
+```{r}
+# Hair colors given brown eyes
+EyeHairProp["Brown",] / EyeProp["Brown"]
+```
+
+```{r}
+# Eye colors given brown hair
+EyeHairProp[,"Brown"] / HairProp["Brown"]
+```

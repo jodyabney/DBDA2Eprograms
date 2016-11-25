@@ -1,5 +1,5 @@
 N = 500 # Specify the total number of flips, denoted N.
-pHeads = 0.5 # Specify underlying probability of heads.
+pHeads = 0.8 # Specify underlying probability of heads.
 # Flip a coin N times and compute the running proportion of heads at each flip.
 # Generate a random sample of N flips (heads=1, tails=0):
 flipSequence = sample( x=c(0,1), prob=c(1-pHeads,pHeads), size=N, replace=TRUE )
