@@ -102,6 +102,8 @@ x = seq( from = xlow , to = xhigh , by = dx )
 y = 6 * x * (1 - x)
 # Plot the function. "plot" draws the intervals. "lines" draws the bell curve.
 #openGraph(width=7,height=5)
+```
+```{r}
 plot( x , y , type="h" , lwd=1 , cex.axis=1.5, xlab="x" , ylab="p(x)" , cex.lab=1.5, 
       main="p(x)=6x(1-x) Probability Density" , cex.main=1.5 )
 lines( x , y , lwd=3 ,  col="skyblue" )
@@ -114,6 +116,7 @@ text( 0.7 , .75*max(y) ,
       bquote(
         paste( integral(dx,0,1) , " ", "p(x) = " , .(signif(area,3)) )
       ) , adj=c(0,.5) , cex=1.5 )
+```
 # Save the plot to an EPS file.
 #saveGraph( file = "IntegralOfDensity" , type="eps" )
 
